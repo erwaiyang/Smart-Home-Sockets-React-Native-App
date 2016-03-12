@@ -28,18 +28,18 @@ import {
       </View>
     );
   };
-  class FeaturedPage extends Component {
+  class ControlsPage extends Component {
 
       render() {
             return (
                 <NavigatorIOS
                     style={styles.container}
                     initialRoute={{
-                title: 'Featured',
+                title: '即時控制',
                 component: temp
             }}/>
           );
       }
   }
 
-export default FeaturedPage;
+export default ControlsPage;
