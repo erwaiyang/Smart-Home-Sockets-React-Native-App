@@ -2,6 +2,8 @@
 
 import React from 'react-native';
 
+import ControlsPanel from './components/ControlsPanel';
+
 import {
     StyleSheet,
     NavigatorIOS,
@@ -36,7 +38,7 @@ import {
                     style={styles.container}
                     initialRoute={{
                 title: '即時控制',
-                component: temp
+                component: ControlsPanel
             }}/>
           );
       }

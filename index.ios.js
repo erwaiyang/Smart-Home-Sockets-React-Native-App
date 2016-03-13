@@ -17,6 +17,7 @@ class HomeCare extends Component {
         this.state = {
             selectedTab: 'controls'
         };
+        console.log('constructor of index');
     }
 
     render() {
