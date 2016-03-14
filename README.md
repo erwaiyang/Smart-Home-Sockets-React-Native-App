@@ -14,3 +14,6 @@
 我使用React Native開發iOS APP，串接MediaTek Cloud Sandbox提供的API，達到遠端控制開關的效果。
 
 因為是兩天內快速開發，程式碼不太簡潔，也未引入Redux架構，算是React Native的急速小開發。
+
+## Special Thanks
+App Icons from [ICONS8](https://icons8.com/)
