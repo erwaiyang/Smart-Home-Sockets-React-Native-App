@@ -1,3 +1,6 @@
+# Don't Upload It
+constants/keys.js
+
 # OSX
 #
 .DS_Store

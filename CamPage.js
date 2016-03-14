@@ -4,12 +4,14 @@ import React from 'react-native';
 import Video from 'react-native-video';
 import Dimensions from 'Dimensions';
 
+import * as MY_KEYS from './constants/keys';
+
 import {
     StyleSheet,
     NavigatorIOS,
     Component,
     Text,
-    Animated,
+    WebView,
     View
   } from 'react-native';
 
@@ -46,32 +48,30 @@ var styles = StyleSheet.create({
 });
 
 class MyVideo extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      url : `http://stream-mcs.mediatek.com/${MY_KEYS.DEVICE_ID}/${MY_KEYS.DEVICE_KEY}/${MY_KEYS.VIDEO_DATA_CHANNEL}`
+    };
+  }
   render() {
+    //ar URL = `http://stream-mcs.mediatek.com/${MY_KEYS.DEVICE_ID}/${MY_KEYS.DEVICE_KEY}/${MY_KEYS.VIDEO_DATA_CHANNEL}/320/240`;
+      console.log(URL);
       return (
         <View style={styles.pageContainer}>
           <View style={styles.fullScreen}>
-            <Video style={[styles.fullScreen, styles.videoStyle]}
-                key='ed.mp4'
-                source={{uri: "ed"}}
-                 rate={1.0}
-                 volume={1.0}
-                 muted={false}
-                 paused={false}
-                 resizeMode="cover"
-                 repeat={false}
-                  />
+                <WebView
+                    ref='webview'
+                    automaticallyAdjustContentInsets={false}
+                    style={styles.videoStyle}
+                    source={{uri: this.state.url}}
+                    javaScriptEnabled={true}
+                    domStorageEnabled={true}
+                    decelerationRate="normal"
+                    startInLoadingState={true}
+                />
             </View>
         </View>
-          // <Video
-          //     key='ed.mp4'
-          //     source={{uri: "ed"}}
-          //      rate={1.0}
-          //      volume={1.0}
-          //      muted={false}
-          //      paused={false}
-          //      resizeMode="cover"
-          //      repeat={false}
-          //      style={styles.backgroundVideo} />
       );
     };
   }
@@ -90,3 +90,14 @@ class CamPage extends Component {
 }
 
 export default CamPage;
+
+// <Video style={[styles.fullScreen, styles.videoStyle]}
+//     key='ed.mp4'
+//     source={{uri: URL}}
+//      rate={1.0}
+//      volume={1.0}
+//      muted={false}
+//      paused={false}
+//      resizeMode="cover"
+//      repeat={false}
+//       />

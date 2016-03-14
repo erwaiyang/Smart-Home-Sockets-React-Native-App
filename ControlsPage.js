@@ -21,15 +21,6 @@ import {
           flex: 1
       }
   });
-  const temp = () => {
-    return (
-      <View style={styles.container}>
-          <Text style={styles.description}>
-            Featured Tab
-          </Text>
-      </View>
-    );
-  };
   class ControlsPage extends Component {
 
       render() {
